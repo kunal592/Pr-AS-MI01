@@ -74,15 +74,15 @@ function Home() {
               <Link
                 to="/products"
                 search={{ category: "all", q: "" }}
-                className="inline-flex items-center justify-center gap-2.5 bg-primary px-7 py-4 font-mono text-xs font-bold uppercase tracking-[0.14em] text-white transition-all hover:bg-primary/90 hover:translate-x-0.5"
+                className="inline-flex h-14 items-center justify-center gap-3 bg-primary px-8 font-mono text-[13px] font-bold uppercase tracking-[0.14em] text-white rounded-none transition-all hover:bg-primary/90 hover:translate-x-0.5"
               >
-                EXPLORE PRODUCTS <ArrowUpRight className="h-4 w-4" />
+                EXPLORE PRODUCTS <ArrowUpRight className="h-4 w-4 stroke-[2.5]" />
               </Link>
               <Link
                 to="/quote"
-                className="inline-flex items-center justify-center gap-2.5 border border-white/30 bg-transparent px-7 py-4 font-mono text-xs font-bold uppercase tracking-[0.14em] text-white transition-all hover:border-primary hover:text-primary"
+                className="inline-flex h-14 items-center justify-center gap-3 border border-white/40 bg-transparent px-8 font-mono text-[13px] font-bold uppercase tracking-[0.14em] text-white rounded-none transition-all hover:border-primary hover:text-primary"
               >
-                START A CONVERSATION <ArrowUpRight className="h-4 w-4" />
+                START A CONVERSATION <ArrowUpRight className="h-4 w-4 stroke-[2.5]" />
               </Link>
             </div>
           </Reveal>

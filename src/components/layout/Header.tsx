@@ -72,10 +72,10 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Link
             to="/quote"
-            className="hidden items-center gap-2 bg-primary px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform duration-200 hover:-translate-y-0.5 sm:inline-flex"
+            className="hidden items-center gap-2.5 bg-primary px-6 py-4 text-[13px] font-extrabold uppercase tracking-[0.14em] text-primary-foreground transition-all duration-200 hover:bg-primary/90 rounded-none sm:inline-flex"
           >
-            Request a Quote
-            <ArrowUpRight className="h-4 w-4" />
+            REQUEST A QUOTE
+            <ArrowUpRight className="h-4 w-4 stroke-[2.5]" />
           </Link>
           <button
             type="button"
