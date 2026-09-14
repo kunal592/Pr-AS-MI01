@@ -5,7 +5,6 @@ import { Container } from "@/components/common/Section";
 import { company } from "@/data/company";
 
 const nav = [
-  { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/products", label: "Products" },
   { to: "/industries", label: "Industries" },
