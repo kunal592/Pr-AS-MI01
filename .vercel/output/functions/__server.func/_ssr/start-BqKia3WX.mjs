@@ -1,7 +1,7 @@
 import { t as createClient } from "../_libs/supabase__supabase-js.mjs";
 import { n as createMiddleware, t as createCsrfMiddleware } from "./createCsrfMiddleware-B2To0gPJ.mjs";
 import { t as renderErrorPage } from "./ssr.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/start-C6zPHmiL.js
+//#region node_modules/.nitro/vite/services/ssr/assets/start-BqKia3WX.js
 function dedupeSerializationAdapters(deduped, serializationAdapters) {
 	for (let i = 0, len = serializationAdapters.length; i < len; i++) {
 		const current = serializationAdapters[i];
@@ -57,7 +57,7 @@ function createSupabaseClient() {
 		"VITE_SUPABASE_PROJECT_ID": "ishgpnmocvkepxtkiqao",
 		"VITE_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_k_pFaovJZZMNGQyBXKKgLQ_4DICOx04",
 		"VITE_SUPABASE_URL": "https://ishgpnmocvkepxtkiqao.supabase.co"
-	}["VITE_SUPABASE_URL"] || process.env["SUPABASE_URL"];
+	}["VITE_SUPABASE_URL"] || process.env["SUPABASE_URL"] || "https://ishgpnmocvkepxtkiqao.supabase.co";
 	const SUPABASE_PUBLISHABLE_KEY = {
 		"BASE_URL": "/",
 		"DEV": false,
@@ -74,12 +74,7 @@ function createSupabaseClient() {
 		"VITE_SUPABASE_PROJECT_ID": "ishgpnmocvkepxtkiqao",
 		"VITE_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_k_pFaovJZZMNGQyBXKKgLQ_4DICOx04",
 		"VITE_SUPABASE_URL": "https://ishgpnmocvkepxtkiqao.supabase.co"
-	}["VITE_SUPABASE_PUBLISHABLE_KEY"] || process.env["SUPABASE_PUBLISHABLE_KEY"];
-	if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) {
-		const message = `Missing Supabase environment variable(s): ${[...!SUPABASE_URL ? ["SUPABASE_URL"] : [], ...!SUPABASE_PUBLISHABLE_KEY ? ["SUPABASE_PUBLISHABLE_KEY"] : []].join(", ")}.`;
-		console.error(`[Supabase] ${message}`);
-		throw new Error(message);
-	}
+	}["VITE_SUPABASE_PUBLISHABLE_KEY"] || process.env["SUPABASE_PUBLISHABLE_KEY"] || "sb_publishable_k_pFaovJZZMNGQyBXKKgLQ_4DICOx04";
 	return createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
 		global: { fetch: createSupabaseFetch(SUPABASE_PUBLISHABLE_KEY) },
 		auth: {
