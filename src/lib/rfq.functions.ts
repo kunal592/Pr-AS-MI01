@@ -21,38 +21,16 @@ const rfqSchema = z.object({
 
 export type RfqInput = z.input<typeof rfqSchema>;
 
-const orNull = (v?: string) => (v && v.length > 0 ? v : null);
 
 export const submitRfq = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) => rfqSchema.parse(input))
   .handler(async ({ data }) => {
-    try {
-      const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-
-      const { error } = await supabaseAdmin.from("rfq_submissions").insert({
-        full_name: data.fullName,
-        email: data.email,
-        phone: orNull(data.phone),
-        company: orNull(data.company),
-        designation: orNull(data.designation),
-        city: orNull(data.city),
-        country: orNull(data.country),
-        industry: orNull(data.industry),
-        product_interest: data.productInterest,
-        quantity: orNull(data.quantity),
-        capacity_requirement: orNull(data.capacityRequirement),
-        timeline: orNull(data.timeline),
-        budget_range: orNull(data.budgetRange),
-        requirement: data.requirement,
-        source: orNull(data.source),
-      });
-
-      if (error) {
-        console.warn("[rfq] Supabase insert failed (mocking success for MVP):", error.message);
-      }
-    } catch (err) {
-      console.warn("[rfq] Supabase unavailable (mocking success for MVP):", err);
-    }
-
+    // MVP mode: log submission server-side; database integration added later
+    console.log("[rfq] Received RFQ submission:", {
+      fullName: data.fullName,
+      email: data.email,
+      company: data.company,
+      requirement: data.requirement.slice(0, 100) + (data.requirement.length > 100 ? "…" : ""),
+    });
     return { ok: true as const };
   });
