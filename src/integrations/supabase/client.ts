@@ -39,9 +39,9 @@ function createSupabaseClient() {
       fetch: createSupabaseFetch(SUPABASE_PUBLISHABLE_KEY),
     },
     auth: {
-
-      persistSession: true,
-      autoRefreshToken: true,
+      persistSession: typeof window !== 'undefined',
+      autoRefreshToken: typeof window !== 'undefined',
+      detectSessionInUrl: typeof window !== 'undefined',
     }
   });
 }

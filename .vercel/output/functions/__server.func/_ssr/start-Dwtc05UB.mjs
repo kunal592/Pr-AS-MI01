@@ -1,6 +1,6 @@
 import { t as createClient } from "../_libs/supabase__supabase-js.mjs";
 import { n as createMiddleware, t as createCsrfMiddleware } from "./createCsrfMiddleware-B2To0gPJ.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/start-4jTVhH7y.js
+//#region node_modules/.nitro/vite/services/ssr/assets/start-Dwtc05UB.js
 function dedupeSerializationAdapters(deduped, serializationAdapters) {
 	for (let i = 0, len = serializationAdapters.length; i < len; i++) {
 		const current = serializationAdapters[i];
@@ -110,8 +110,9 @@ function createSupabaseClient() {
 	return createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
 		global: { fetch: createSupabaseFetch(SUPABASE_PUBLISHABLE_KEY) },
 		auth: {
-			persistSession: true,
-			autoRefreshToken: true
+			persistSession: typeof window !== "undefined",
+			autoRefreshToken: typeof window !== "undefined",
+			detectSessionInUrl: typeof window !== "undefined"
 		}
 	});
 }
@@ -121,9 +122,14 @@ var supabase = new Proxy({}, { get(_, prop, receiver) {
 	return Reflect.get(_supabase, prop, receiver);
 } });
 var attachSupabaseAuth = createMiddleware({ type: "function" }).client(async ({ next }) => {
-	const { data } = await supabase.auth.getSession();
-	const token = data.session?.access_token;
-	return next({ headers: token ? { Authorization: `Bearer ${token}` } : {} });
+	if (typeof window === "undefined") return next({ headers: {} });
+	try {
+		const { data } = await supabase.auth.getSession();
+		const token = data.session?.access_token;
+		return next({ headers: token ? { Authorization: `Bearer ${token}` } : {} });
+	} catch {
+		return next({ headers: {} });
+	}
 });
 var errorMiddleware = createMiddleware().server(async ({ next }) => {
 	try {
