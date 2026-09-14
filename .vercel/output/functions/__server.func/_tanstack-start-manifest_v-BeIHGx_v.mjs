@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-BCLXVEUs.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-BeIHGx_v.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "/Users/kunal/Downloads/forge-hub-digital-main/src/routes/__root.tsx",
@@ -13,7 +13,7 @@ var tsrStartManifest = () => ({ routes: {
 			"/quote"
 		],
 		preloads: [
-			"/assets/index-BzXrLbUM.js",
+			"/assets/index-C2OWdU1h.js",
 			"/assets/jsx-runtime-Dk72oS4N.js",
 			"/assets/link-Be80Z4Wq.js",
 			"/assets/useStore-DG2WmC1C.js",
@@ -23,66 +23,66 @@ var tsrStartManifest = () => ({ routes: {
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-BzXrLbUM.js"
+			src: "/assets/index-C2OWdU1h.js"
 		} }]
 	},
 	"/": {
 		filePath: "/Users/kunal/Downloads/forge-hub-digital-main/src/routes/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/routes-D0LhEMU-.js",
-			"/assets/arrow-right-C3fpiu8W.js",
+			"/assets/routes-Bnzv1rYR.js",
+			"/assets/arrow-right-Dxi8UL3r.js",
 			"/assets/Reveal-xCclNLFT.js",
 			"/assets/SmartImage-DNBUlpwj.js",
-			"/assets/industries-CHH-pOZ4.js"
+			"/assets/industries-CejZjKn6.js"
 		]
 	},
 	"/about": {
 		filePath: "/Users/kunal/Downloads/forge-hub-digital-main/src/routes/about.tsx",
 		children: void 0,
-		preloads: ["/assets/about-Q39plxDf.js", "/assets/Reveal-xCclNLFT.js"]
+		preloads: ["/assets/about-B2Z-hWUp.js", "/assets/Reveal-xCclNLFT.js"]
 	},
 	"/capabilities": {
 		filePath: "/Users/kunal/Downloads/forge-hub-digital-main/src/routes/capabilities.tsx",
 		children: void 0,
-		preloads: ["/assets/capabilities-B2bKOpL9.js", "/assets/Reveal-xCclNLFT.js"]
+		preloads: ["/assets/capabilities-CeaXr3Q1.js", "/assets/Reveal-xCclNLFT.js"]
 	},
 	"/contact": {
 		filePath: "/Users/kunal/Downloads/forge-hub-digital-main/src/routes/contact.tsx",
 		children: void 0,
-		preloads: ["/assets/contact-C6C9HADs.js", "/assets/Reveal-xCclNLFT.js"]
+		preloads: ["/assets/contact-Dt3OnywN.js", "/assets/Reveal-xCclNLFT.js"]
 	},
 	"/industries": {
 		filePath: "/Users/kunal/Downloads/forge-hub-digital-main/src/routes/industries.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/industries-DreNdDlP.js",
-			"/assets/arrow-right-C3fpiu8W.js",
+			"/assets/industries-DoFdcrpP.js",
+			"/assets/arrow-right-Dxi8UL3r.js",
 			"/assets/Reveal-xCclNLFT.js",
-			"/assets/industries-CHH-pOZ4.js"
+			"/assets/industries-CejZjKn6.js"
 		]
 	},
 	"/products": {
 		filePath: "/Users/kunal/Downloads/forge-hub-digital-main/src/routes/products.tsx",
 		children: ["/products/$slug", "/products/"],
-		preloads: ["/assets/products-D49p_T36.js"]
+		preloads: ["/assets/products-yL7tV4NQ.js"]
 	},
 	"/projects": {
 		filePath: "/Users/kunal/Downloads/forge-hub-digital-main/src/routes/projects.tsx",
 		children: void 0,
-		preloads: ["/assets/projects-Bq1NOm2V.js", "/assets/Reveal-xCclNLFT.js"]
+		preloads: ["/assets/projects-SxFFctdQ.js", "/assets/Reveal-xCclNLFT.js"]
 	},
 	"/quote": {
 		filePath: "/Users/kunal/Downloads/forge-hub-digital-main/src/routes/quote.tsx",
 		children: void 0,
-		preloads: ["/assets/quote-DHWTZc31.js", "/assets/Reveal-xCclNLFT.js"]
+		preloads: ["/assets/quote-CC4Rfeun.js", "/assets/Reveal-xCclNLFT.js"]
 	},
 	"/products/$slug": {
 		filePath: "/Users/kunal/Downloads/forge-hub-digital-main/src/routes/products.$slug.tsx",
 		children: void 0,
 		preloads: [
 			"/assets/products._slug-C10hSUJX.js",
-			"/assets/products._slug-Cke-l8K6.js",
+			"/assets/products._slug-SxK5D5ox.js",
 			"/assets/Reveal-xCclNLFT.js",
 			"/assets/SmartImage-DNBUlpwj.js"
 		]
@@ -91,8 +91,8 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/Users/kunal/Downloads/forge-hub-digital-main/src/routes/products.index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/products.index-B2YyYv7T.js",
-			"/assets/arrow-right-C3fpiu8W.js",
+			"/assets/products.index-D6qjKkgD.js",
+			"/assets/arrow-right-Dxi8UL3r.js",
 			"/assets/Reveal-xCclNLFT.js",
 			"/assets/SmartImage-DNBUlpwj.js"
 		]

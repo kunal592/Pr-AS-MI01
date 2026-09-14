@@ -10,10 +10,10 @@ import { t as Route$9 } from "./products.index-CY94c3au.mjs";
 import { t as Route$10 } from "./quote-BlDzD55j.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DsHBxybi.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-D8bibrGY.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-CKY4-m8m.css";
+var styles_default = "/assets/styles-BlIiLpx1.css";
 var nav = [
 	{
 		to: "/",
@@ -725,7 +725,8 @@ var getRouter = () => {
 		routeTree,
 		context: { queryClient },
 		scrollRestoration: true,
-		defaultPreloadStaleTime: 0
+		defaultPreloadStaleTime: 0,
+		notFoundMode: "root"
 	});
 };
 //#endregion

@@ -93,7 +93,7 @@ function renderErrorPage() {
 }
 var serverEntryPromise;
 async function getServerEntry() {
-	if (!serverEntryPromise) serverEntryPromise = import("./server-DN8_pxxp.mjs").then((m) => m.default ?? m);
+	if (!serverEntryPromise) serverEntryPromise = import("./server--DHwMcEn.mjs").then((m) => m.default ?? m);
 	return serverEntryPromise;
 }
 async function normalizeCatastrophicSsrResponse(response) {
@@ -116,10 +116,16 @@ function isH3SwallowedErrorBody(body) {
 	}
 }
 var server_default = { async fetch(request, env, ctx) {
+	const url = new URL(request.url);
+	if (url.pathname === "/favicon.ico") return new Response(null, { status: 204 });
+	if (/\.(png|jpe?g|gif|svg|webp|ico|css|js|woff2?|ttf|map)$/i.test(url.pathname)) return new Response("Asset Not Found", {
+		status: 404,
+		headers: { "content-type": "text/plain" }
+	});
 	try {
 		return await normalizeCatastrophicSsrResponse(await (await getServerEntry()).fetch(request, env, ctx));
 	} catch (error) {
-		console.error(error);
+		console.error("[SSR Server Error]", error);
 		return new Response(renderErrorPage(), {
 			status: 500,
 			headers: { "content-type": "text/html; charset=utf-8" }
