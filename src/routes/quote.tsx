@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
@@ -8,7 +7,6 @@ import { Container, Eyebrow, PageHeader } from "@/components/common/Section";
 import { Reveal } from "@/components/common/Reveal";
 import { products, categories } from "@/data/products";
 import { company } from "@/data/company";
-import { submitRfq } from "@/lib/rfq.functions";
 
 export const Route = createFileRoute("/quote")({
   validateSearch: (search: Record<string, unknown>): { product?: string } =>
@@ -41,7 +39,6 @@ const labelClass = "block text-[11px] font-semibold uppercase tracking-[0.16em] 
 
 function QuotePage() {
   const { product } = Route.useSearch();
-  const submit = useServerFn(submitRfq);
   const [sending, setSending] = useState(false);
   const [done, setDone] = useState(false);
   const [selected, setSelected] = useState<string[]>(product ? [product] : []);
@@ -58,34 +55,72 @@ function QuotePage() {
 
     setSending(true);
     try {
-      await submit({
-        data: {
-          fullName: value("fullName"),
-          email: value("email"),
-          phone: value("phone"),
-          company: value("company"),
-          designation: value("designation"),
-          city: value("city"),
-          country: value("country"),
-          industry: value("industry"),
-          productInterest: selected,
-          quantity: value("quantity"),
-          capacityRequirement: value("capacityRequirement"),
-          timeline: value("timeline"),
-          budgetRange: value("budgetRange"),
-          requirement: value("requirement"),
-          source: value("source"),
-        },
-      });
+      const fullName = value("fullName");
+      const email = value("email");
+      const phone = value("phone");
+      const company_ = value("company");
+      const designation = value("designation");
+      const city = value("city");
+      const country = value("country");
+      const industry = value("industry");
+      const quantity = value("quantity");
+      const capacity = value("capacityRequirement");
+      const timeline = value("timeline");
+      const budget = value("budgetRange");
+      const requirement = value("requirement");
+      const source = value("source");
+      const products_ = selected.join(", ") || "Not specified";
+
+      const subject = encodeURIComponent(
+        `RFQ from ${fullName}${company_ ? ` — ${company_}` : ""}`
+      );
+
+      const body = encodeURIComponent(
+        [
+          "REQUEST FOR QUOTATION",
+          "======================",
+          "",
+          "CONTACT DETAILS",
+          `Name        : ${fullName}`,
+          `Email       : ${email}`,
+          `Phone       : ${phone || "—"}`,
+          `Designation : ${designation || "—"}`,
+          "",
+          "COMPANY",
+          `Company     : ${company_ || "—"}`,
+          `Industry    : ${industry || "—"}`,
+          `City        : ${city || "—"}`,
+          `Country     : ${country || "—"}`,
+          "",
+          "EQUIPMENT OF INTEREST",
+          `Products    : ${products_}`,
+          "",
+          "REQUIREMENT",
+          `Quantity    : ${quantity || "—"}`,
+          `Capacity    : ${capacity || "—"}`,
+          `Timeline    : ${timeline || "—"}`,
+          `Budget      : ${budget || "—"}`,
+          "",
+          "DESCRIPTION",
+          requirement,
+          "",
+          "HOW THEY HEARD ABOUT US",
+          source || "—",
+        ].join("\n")
+      );
+
+      window.location.href = `mailto:${company.email}?subject=${subject}&body=${body}`;
+
+      // Small delay so the mailto opens before we reset
+      await new Promise((r) => setTimeout(r, 800));
+
       setDone(true);
       form.reset();
       setSelected([]);
-      toast.success("Request received. Our team will get back to you shortly.");
+      toast.success("Your email client has opened — please send the pre-filled email to complete your request.");
     } catch (error) {
       console.error(error);
-      toast.error(
-        error instanceof Error ? error.message : "Something went wrong. Please try again.",
-      );
+      toast.error("Something went wrong. Please email us directly at " + company.email);
     } finally {
       setSending(false);
     }
