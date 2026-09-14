@@ -7,13 +7,13 @@ import { c as HeadContent, d as createRouter, f as Outlet, g as Link, h as creat
 import { a as MapPin, i as Menu, o as Mail, t as X, u as ArrowUpRight } from "../_libs/lucide-react.mjs";
 import { t as Route$8 } from "./products._slug-CstTlZQp.mjs";
 import { t as Route$9 } from "./products.index-CY94c3au.mjs";
-import { t as Route$10 } from "./quote-BlDzD55j.mjs";
+import { t as Route$10 } from "./quote-CFFtRtIB.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-D8bibrGY.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DmREofo0.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-BlIiLpx1.css";
+var styles_default = "/assets/styles-CKY4-m8m.css";
 var nav = [
 	{
 		to: "/",

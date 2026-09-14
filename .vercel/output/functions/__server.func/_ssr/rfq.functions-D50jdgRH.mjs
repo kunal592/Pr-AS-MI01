@@ -1,6 +1,6 @@
-import { c as createServerFn, i as TSS_SERVER_FUNCTION } from "./createServerFn-CIHAFgYl.mjs";
+import { n as TSS_SERVER_FUNCTION, t as createServerFn } from "./ssr.mjs";
 import { i as stringType, n as literalType, r as objectType, t as arrayType } from "../_libs/zod.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/rfq.functions-1trVuMhL.js
+//#region node_modules/.nitro/vite/services/ssr/assets/rfq.functions-D50jdgRH.js
 var createServerRpc = (serverFnMeta, splitImportFn) => {
 	const url = "/_serverFn/" + serverFnMeta.id;
 	return Object.assign(splitImportFn, {
