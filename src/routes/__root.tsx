@@ -92,11 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap",
       },
-      {
-        rel: "icon",
-        href: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a"/></svg>',
-        type: "image/svg+xml"
-      },
+      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
     scripts: [
       {
