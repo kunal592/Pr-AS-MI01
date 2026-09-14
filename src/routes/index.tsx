@@ -1,11 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, ArrowDownRight } from "lucide-react";
-import { Container, Eyebrow } from "@/components/common/Section";
+import { Container } from "@/components/common/Section";
 import { Reveal } from "@/components/common/Reveal";
 import { SmartImage } from "@/components/common/SmartImage";
 import { categories, products } from "@/data/products";
-import { industries } from "@/data/industries";
-import { verifiedFacts } from "@/data/company";
 import heroImg from "@/assets/hero-steel.jpg";
 
 export const Route = createFileRoute("/")({
@@ -31,12 +29,12 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const featured = products.slice(0, 6);
+  const selectedProducts = products.slice(0, 3);
 
   return (
     <>
-      {/* Hero Section — Matching Reference Design */}
-      <section className="relative isolate flex min-h-screen flex-col justify-between overflow-hidden bg-ink pt-28 pb-8 text-ink-foreground">
+      {/* SECTION 0: HERO (Dark Industrial Aesthetic) */}
+      <section className="relative isolate flex min-h-screen flex-col justify-between overflow-hidden bg-black pt-28 pb-8 text-white">
         <img
           src={heroImg}
           alt="Heavy industrial steel plant with molten metal casting machinery"
@@ -47,10 +45,8 @@ function Home() {
 
         <Container className="relative z-10 my-auto py-12">
           <Reveal>
-            <p className="eyebrow flex items-center gap-3 text-ink-muted">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-gray-300">
-                INDUSTRIAL EQUIPMENT · DURG, INDIA · SINCE 2010
-              </span>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-gray-300 font-medium">
+              INDUSTRIAL EQUIPMENT · DURG, INDIA · SINCE 2010
             </p>
           </Reveal>
 
@@ -102,63 +98,106 @@ function Home() {
         </Container>
       </section>
 
-      {/* Verified Facts & Stats */}
-      <section className="border-b border-hairline bg-card">
-        <Container className="px-0 md:px-10 lg:px-14">
-          <dl className="grid grid-cols-2 md:grid-cols-4">
-            {verifiedFacts.map((f, i) => (
-              <Reveal
-                key={f.label}
-                delay={i * 60}
-                className="border-hairline px-5 py-8 [&:nth-child(odd)]:border-r md:border-r md:px-8 md:py-10 last:border-r-0 md:last:border-r-0 [&:nth-child(3)]:md:border-r [&:nth-child(4)]:border-r-0"
-              >
-                <dt className="eyebrow text-muted-foreground">{f.label}</dt>
-                <dd className="mt-3 font-display text-3xl font-extrabold text-foreground md:text-5xl">
-                  {f.value}
-                </dd>
-                <p className="mt-2 text-xs text-muted-foreground">{f.note}</p>
-              </Reveal>
-            ))}
-          </dl>
+      {/* SECTION 01: COMPANY (Warm Beige Stats Section) */}
+      <section className="bg-[#EAE7E1] py-20 text-neutral-900 md:py-28">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            {/* Left Info Column */}
+            <Reveal className="lg:col-span-6">
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">
+                01 / COMPANY
+              </p>
+              <h2 className="mt-4 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
+                Built around the realities of industry.
+              </h2>
+              <p className="mt-6 max-w-lg text-sm leading-relaxed text-neutral-700 sm:text-base">
+                MICRO TECHNOCAM EQUIPMENTS PRIVATE LIMITED is a manufacturer, supplier and trading company
+                established in 2010, with a public product portfolio spanning steel melting equipment,
+                conveyors, cranes and industrial machinery.
+              </p>
+            </Reveal>
+
+            {/* Right Stats Column */}
+            <Reveal delay={120} className="flex flex-col justify-center lg:col-span-6">
+              <div className="divide-y divide-neutral-300 border-t border-b border-neutral-300">
+                {/* Stat 1 */}
+                <div className="flex items-baseline justify-between py-6">
+                  <span className="font-display text-4xl font-extrabold sm:text-5xl md:text-6xl">
+                    2010
+                  </span>
+                  <span className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-neutral-600">
+                    ESTABLISHED
+                  </span>
+                </div>
+                {/* Stat 2 */}
+                <div className="flex items-baseline justify-between py-6">
+                  <span className="font-display text-4xl font-extrabold sm:text-5xl md:text-6xl">
+                    Durg
+                  </span>
+                  <span className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-neutral-600">
+                    CHHATTISGARH, INDIA
+                  </span>
+                </div>
+                {/* Stat 3 */}
+                <div className="flex items-baseline justify-between py-6">
+                  <span className="font-display text-4xl font-extrabold sm:text-5xl md:text-6xl">
+                    26+
+                  </span>
+                  <span className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-neutral-600">
+                    PRODUCTS PUBLICLY LISTED
+                  </span>
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </Container>
       </section>
 
-      {/* Capability Lines */}
-      <section className="py-20 md:py-28">
+      {/* SECTION 02: PRODUCT ECOSYSTEM (Dark Rows) */}
+      <section className="bg-[#121212] py-20 text-white md:py-28">
         <Container>
-          <Reveal className="max-w-3xl">
-            <Eyebrow>Capability areas</Eyebrow>
-            <h2 className="mt-5 font-display text-3xl font-extrabold uppercase leading-tight md:text-5xl">
-              Four equipment lines, one engineering discipline
+          <Reveal>
+            <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">
+              02 / PRODUCT ECOSYSTEM
+            </p>
+            <h2 className="mt-4 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
+              A catalogue built for heavy work.
             </h2>
           </Reveal>
-          <div className="mt-14 grid gap-px bg-hairline md:grid-cols-2">
+
+          {/* Product Rows List */}
+          <div className="mt-14 border-t border-white/10 divide-y divide-white/10">
             {categories.map((c, i) => (
-              <Reveal key={c.id} delay={i * 70} className="group bg-background">
+              <Reveal key={c.id} delay={i * 80} className="group">
                 <Link
                   to="/products"
                   search={{ category: c.id, q: "" }}
-                  className="flex h-full flex-col p-8 md:p-10"
+                  className="flex flex-col gap-6 py-8 sm:flex-row sm:items-center sm:justify-between transition-colors hover:bg-white/[0.02]"
                 >
-                  <div className="relative aspect-[16/9] overflow-hidden bg-muted">
-                    <img
-                      src={c.image}
-                      alt={c.name}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
+                  <div className="flex items-center gap-6 md:gap-10">
+                    <span className="font-mono text-sm font-bold text-primary sm:text-base">
+                      0{i + 1}
+                    </span>
+                    <div className="h-20 w-32 shrink-0 overflow-hidden bg-neutral-800 md:h-24 md:w-40">
+                      <img
+                        src={c.image}
+                        alt={c.name}
+                        loading="lazy"
+                        className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-xl font-bold uppercase sm:text-2xl md:text-3xl transition-colors group-hover:text-primary">
+                        {c.name}
+                      </h3>
+                      <p className="mt-1 max-w-md text-xs text-neutral-400 sm:text-sm">
+                        {c.description}
+                      </p>
+                    </div>
                   </div>
-                  <p className="eyebrow mt-7 text-primary">{c.tagline}</p>
-                  <h3 className="mt-3 font-display text-2xl font-bold uppercase leading-tight md:text-3xl">
-                    {c.name}
-                  </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    {c.description}
-                  </p>
-                  <span className="mt-6 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-foreground">
-                    Explore range
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </span>
+                  <div className="self-end sm:self-center">
+                    <ArrowRight className="h-6 w-6 text-white/50 transition-all duration-300 group-hover:translate-x-2 group-hover:text-primary" />
+                  </div>
                 </Link>
               </Reveal>
             ))}
@@ -166,95 +205,90 @@ function Home() {
         </Container>
       </section>
 
-      {/* Featured Equipment Catalogue */}
-      <section className="border-y border-hairline-dark bg-ink py-20 text-ink-foreground md:py-28">
+      {/* SECTION 03: SELECTED EQUIPMENT (3 Card Grid on Warm Beige Canvas) */}
+      <section className="bg-[#EAE7E1] py-20 text-neutral-900 md:py-28">
         <Container>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <Reveal>
-              <Eyebrow>From the catalogue</Eyebrow>
-              <h2 className="mt-5 font-display text-3xl font-extrabold uppercase md:text-5xl">
-                Featured equipment
-              </h2>
-            </Reveal>
-            <Link
-              to="/products"
-              search={{ category: "all", q: "" }}
-              className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-primary"
-            >
-              All products <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
+          <Reveal>
+            <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">
+              03 / SELECTED EQUIPMENT
+            </p>
+            <h2 className="mt-4 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
+              Products with a job to do.
+            </h2>
+          </Reveal>
 
-          <ul className="mt-14 grid gap-px bg-hairline-dark sm:grid-cols-2 lg:grid-cols-3">
-            {featured.map((p, i) => (
-              <Reveal as="li" key={p.id} delay={i * 60} className="group bg-ink">
-                <Link to="/products/$slug" params={{ slug: p.slug }} className="block p-6">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-graphite">
+          {/* 3 Product Cards Grid */}
+          <div className="mt-14 grid gap-8 md:grid-cols-3">
+            {selectedProducts.map((p, i) => (
+              <Reveal key={p.id} delay={i * 80} className="group">
+                <Link to="/products/$slug" params={{ slug: p.slug }} className="block">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-neutral-300">
                     <SmartImage
                       src={p.image}
                       fallback={p.fallbackImage}
                       alt={p.name}
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
+                    <div className="absolute right-0 bottom-0 bg-primary px-4 py-2.5 font-mono text-xs font-bold uppercase tracking-wider text-white flex items-center gap-1.5 transition-colors group-hover:bg-primary/90">
+                      View detail <ArrowUpRight className="h-3.5 w-3.5 stroke-[2.5]" />
+                    </div>
                   </div>
-                  <h3 className="mt-6 font-display text-xl font-bold uppercase">{p.name}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                  <p className="mt-6 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
+                    STEEL &amp; METALLURGICAL EQUIPMENT
+                  </p>
+                  <h3 className="mt-2 font-display text-xl font-bold uppercase leading-snug sm:text-2xl">
+                    {p.name}
+                  </h3>
+                  <p className="mt-2 text-xs leading-relaxed text-neutral-700 sm:text-sm">
                     {p.shortDescription}
                   </p>
                 </Link>
               </Reveal>
             ))}
-          </ul>
-        </Container>
-      </section>
-
-      {/* Industries Served */}
-      <section className="py-20 md:py-28">
-        <Container>
-          <Reveal className="max-w-3xl">
-            <Eyebrow>Industries served</Eyebrow>
-            <h2 className="mt-5 font-display text-3xl font-extrabold uppercase leading-tight md:text-5xl">
-              Built for plants that run continuously
-            </h2>
-          </Reveal>
-          <ul className="mt-12 grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {industries.map((ind, i) => (
-              <Reveal as="li" key={ind.id} delay={i * 60}>
-                <div className="aspect-[4/3] overflow-hidden bg-muted">
-                  <img
-                    src={ind.image}
-                    alt={ind.name}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <h3 className="mt-4 font-display text-base font-bold uppercase md:text-lg">
-                  {ind.name}
-                </h3>
-                <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
-                  {ind.description}
-                </p>
-              </Reveal>
-            ))}
-          </ul>
-        </Container>
-      </section>
-
-      {/* Proposal CTA */}
-      <section className="border-t border-hairline bg-card py-16 md:py-24">
-        <Container className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-          <div>
-            <Eyebrow>Next step</Eyebrow>
-            <h2 className="mt-4 max-w-2xl font-display text-2xl font-extrabold uppercase leading-tight md:text-4xl">
-              Share your specification and we will respond with a scoped proposal
-            </h2>
           </div>
-          <Link
-            to="/quote"
-            className="inline-flex w-full shrink-0 items-center justify-center gap-2 bg-primary px-8 py-5 text-[12px] font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5 sm:w-auto"
-          >
-            Start an RFQ <ArrowUpRight className="h-4 w-4" />
-          </Link>
+
+          <div className="mt-14 flex justify-start">
+            <Link
+              to="/products"
+              search={{ category: "all", q: "" }}
+              className="inline-flex h-14 items-center gap-3 border border-neutral-900 bg-transparent px-8 font-mono text-xs font-bold uppercase tracking-[0.14em] text-neutral-900 rounded-none transition-all hover:bg-neutral-900 hover:text-white"
+            >
+              VIEW COMPLETE CATALOGUE <ArrowUpRight className="h-4 w-4 stroke-[2.5]" />
+            </Link>
+          </div>
+        </Container>
+      </section>
+
+      {/* SECTION 04: CAPABILITY (Dark Graphite Canvas) */}
+      <section className="bg-[#1C1D1D] py-20 text-white md:py-28">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 lg:items-center">
+            <Reveal className="lg:col-span-7">
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">
+                04 / CAPABILITY
+              </p>
+              <h2 className="mt-4 font-display text-4xl font-extrabold uppercase leading-[0.98] tracking-tight sm:text-5xl md:text-6xl lg:text-[4rem]">
+                Precision starts <br />
+                <span className="text-primary">before</span> <br />
+                production.
+              </h2>
+            </Reveal>
+
+            <Reveal delay={120} className="flex flex-col gap-8 lg:col-span-5">
+              <p className="text-sm leading-relaxed text-gray-300 sm:text-base">
+                Every industrial requirement begins with the right questions. Tell us what you need
+                to move, melt, cast or lift — and start a focused conversation about the equipment.
+              </p>
+              <div>
+                <Link
+                  to="/quote"
+                  className="inline-flex h-14 items-center gap-3 bg-primary px-8 font-mono text-xs font-bold uppercase tracking-[0.14em] text-white rounded-none transition-all hover:bg-primary/90 hover:translate-x-0.5"
+                >
+                  DISCUSS YOUR REQUIREMENT <ArrowUpRight className="h-4 w-4 stroke-[2.5]" />
+                </Link>
+              </div>
+            </Reveal>
+          </div>
         </Container>
       </section>
     </>
