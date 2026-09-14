@@ -10,7 +10,7 @@ import { t as Route$9 } from "./products.index-CY94c3au.mjs";
 import { t as Route$10 } from "./quote-CFFtRtIB.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DnI3jv-N.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-C_3v0FlY.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-CKY4-m8m.css";
@@ -386,6 +386,7 @@ function ErrorComponent({ error, reset }) {
 	});
 }
 var Route$7 = createRootRouteWithContext()({
+	ssr: false,
 	head: () => ({
 		meta: [
 			{ charSet: "utf-8" },
