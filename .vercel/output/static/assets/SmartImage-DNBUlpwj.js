@@ -1,0 +1,1 @@
+import{i as e,n as t,t as n}from"./jsx-runtime-Dk72oS4N.js";var r=e(t()),i=n();function a({src:e,fallback:t,alt:n,className:a=``,loading:o=`lazy`}){let[s,c]=(0,r.useState)(e);return(0,i.jsx)(`img`,{src:s,alt:n,loading:o,decoding:`async`,onError:()=>c(t),className:a})}export{a as t};
