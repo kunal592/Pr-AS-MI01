@@ -4,7 +4,7 @@ import { n as require_react, r as require_jsx_runtime } from "../_libs/react+tan
 import { A as isResolvedRedirect, D as resolveManifestCssLink, E as resolveManifestAssetLink, I as invariant, M as rootRouteId, N as isNotFound, O as executeRewriteInput, T as getStylesheetHref, a as replaceSsrResponse, i as normalizeSsrResponse, k as isRedirect, n as defineHandlerCallback, o as stripSsrResponseBody, r as isSsrResponse, t as renderRouterToStream, u as RouterProvider, w as getScriptPreloadAttrs } from "../_libs/@tanstack/react-router+[...].mjs";
 import { n as createMemoryHistory } from "../_libs/tanstack__history.mjs";
 import { a as defaultSerovalPlugins, c as makeSerovalPlugin, d as toCrossJSONStream, i as mergeHeaders, l as fromJSON, n as getNormalizedURL, o as createRawStreamRPCPlugin, r as getOrigin, s as createSerializationAdapter, t as attachRouterServerSsrUtils, u as toCrossJSONAsync } from "../_libs/@tanstack/router-core+[...].mjs";
-import { t as getServerFnById } from "../__23tanstack-start-server-fn-resolver-dIYKwL6j.mjs";
+import { t as getServerFnById } from "../__23tanstack-start-server-fn-resolver-DR9Xot0j.mjs";
 import { a as X_TSS_RAW_RESPONSE, d as getStartOptions, f as runWithStartContext, i as TSS_SERVER_FUNCTION, l as flattenMiddlewares, n as TSS_CONTENT_TYPE_FRAMED_VERSIONED, o as X_TSS_SERIALIZED, p as safeObjectMerge, r as TSS_FORMDATA_CONTEXT, s as createNullProtoObject, t as FrameType, u as getStartContext } from "./createServerFn-CIHAFgYl.mjs";
 import { t as createCsrfMiddleware } from "./createCsrfMiddleware-B2To0gPJ.mjs";
 import { AsyncLocalStorage } from "node:async_hooks";
@@ -1026,7 +1026,7 @@ var getBaseManifest = getProdBaseManifest;
 var createEarlyHintsForRequest = createEarlyHintsCollector;
 async function loadEntries() {
 	const [routerEntry, startEntry, pluginAdapters] = await Promise.all([
-		import("./router-CW1UZF0t.mjs"),
+		import("./router-BmUKePlW.mjs"),
 		import("./start-BqKia3WX.mjs"),
 		import("./empty-plugin-adapters-D9UWiqvJ.mjs")
 	]);

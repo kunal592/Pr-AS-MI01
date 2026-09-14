@@ -1,6 +1,6 @@
 import { m as createFileRoute, p as lazyRouteComponent } from "../_libs/@tanstack/react-router+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/quote-oIFf7rPh.js
-var $$splitComponentImporter = () => import("./quote-BUBqg6ID.mjs");
+//#region node_modules/.nitro/vite/services/ssr/assets/quote-BlDzD55j.js
+var $$splitComponentImporter = () => import("./quote-2Dx-p4bb.mjs");
 var Route = createFileRoute("/quote")({
 	validateSearch: (search) => typeof search["product"] === "string" ? { product: search["product"] } : {},
 	head: () => ({ meta: [
